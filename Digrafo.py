@@ -16,12 +16,12 @@ class Digrafo:
         matriz_adjacencia = np.full((self.__n_vertices, self.__n_vertices), valor)
         self.__matriz_adj = matriz_adjacencia
         
-    def inserirAresta(self, v1, v2):
-        if(v1 != v2 and self.__matriz_adj[v1-1,v2-1] == 0):
-            self.__matriz_adj[v1-1,v2-1] = 1
+    def inserir_aresta(self, v1, v2, custo):
+        if(v1 != v2 and self.__matriz_adj[v1,v2] == 0):
+            self.__matriz_adj[v1,v2] = custo
             self.n_arestas += 1
     
-    def mostrarMatriz(self):
+    def mostrar_matriz(self):
         print(self.__matriz_adj)
 
     @property
