@@ -17,7 +17,7 @@ def main():
     dados_json = mainjson.loads(dados_json)
 
     csv.close()
-    json.close() 
+    json.close()
 
     #Testando Dijsktra com Digrafo Normal
     print('Teste Dijkstra')
@@ -40,13 +40,14 @@ def main():
     #Calculando distancias entre coordenadas
     print('\nTeste Distancia entre Coordenadas')
     print(Finder.distancia(float(dados_json[0]['longitude']), float(dados_json[0]['latitude']), float(dados_json[1]['longitude']), float(dados_json[1]['latitude'])))
-    
+
     #Calculando custos e gerando array
     print('\nTeste Matriz com custos')
     print(Finder.custo(dados_json))
 
     #Inicio do trabalho implementacional
     print('\nTeste dijsktra + Coordenadas')
+    entrada = int(input('Raio: '))
     d2 = Digrafo(len(dados_json))
     d2.inicializar_matriz(0)
     d2.matriz_adj = d2.matriz_adj + Finder.custo(dados_json)

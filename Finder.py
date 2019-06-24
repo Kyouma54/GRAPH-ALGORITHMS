@@ -57,6 +57,6 @@ def custo(dados):
     custos = npf.full((len(dados),len(dados)), 0)
     for i in range(len(dados)):
         for j in range(len(dados)):
-            if(i != j and j!= 0):
+            if(i != j):
                 custos[i,j] = distancia(float(dados[0]['longitude']), float(dados[0]['latitude']), float(dados[j]['longitude']), float(dados[j]['latitude']))
     return custos
